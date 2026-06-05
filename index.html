@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraShield — Monitoramento de Desastres Naturais via Satélite</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/web.css" />
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <nav>
+    <div class="nav-logo">
+      <img src="img/logo.svg" alt="TerraShield logo" />
+      TerraShield
+    </div>
+    <ul class="nav-links">
+      <li><a href="#problema">Problema</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#objetivos">Objetivos</a></li>
+      <li><a href="#publico">Público</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#aplicacao" class="nav-cta">Ver solução</a></li>
+    </ul>
+  </nav>
+
+  <!-- TROCA DE TEMA -->
+  <div id="temas">
+    <p class="temas-titulo">Escolha o tema</p>
+    <div class="temas-btns">
+      <button class="tema-btn ativo" data-tema="padrao">Padrão</button>
+      <button class="tema-btn"       data-tema="noite">Noite</button>
+      <button class="tema-btn"       data-tema="alerta">Alerta</button>
+    </div>
+  </div>
+
+  <!-- SLIDESHOW -->
+  <section id="slideshow">
+    <div class="slideshow-wrapper">
+
+      <div class="slide slide-1 active">
+        <div class="slide-conteudo">
+          <div class="slide-icone" aria-hidden="true">🔥</div>
+          <h2 class="slide-titulo">Queimadas no Brasil</h2>
+          <p class="slide-desc">
+            Satélites da NASA monitoram focos de calor em tempo real.
+            O TerraShield processa esses dados e emite alertas antes
+            que o fogo se alastre.
+          </p>
+          <span class="slide-stat">27M ha/ano</span>
+        </div>
+      </div>
+
+      <div class="slide slide-2">
+        <div class="slide-conteudo">
+          <div class="slide-icone" aria-hidden="true">🌊</div>
+          <h2 class="slide-titulo">Enchentes e Alagamentos</h2>
+          <p class="slide-desc">
+            Dados de chuva acumulada via OpenWeather e sensoriamento
+            remoto ajudam a prever enchentes com horas de antecedência.
+          </p>
+          <span class="slide-stat">4 bi em risco</span>
+        </div>
+      </div>
+
+      <div class="slide slide-3">
+        <div class="slide-conteudo">
+          <div class="slide-icone" aria-hidden="true">⛰️</div>
+          <h2 class="slide-titulo">Deslizamentos de Terra</h2>
+          <p class="slide-desc">
+            Imagens SAR do satélite Copernicus identificam instabilidade
+            no solo antes que deslizamentos devastem comunidades inteiras.
+          </p>
+          <span class="slide-stat">&lt; 1s de alerta</span>
+        </div>
+      </div>
+
+      <div class="slide-controles">
+        <button class="slide-prev" aria-label="Slide anterior">&#8592;</button>
+        <div class="slide-indicators">
+          <button class="slide-indicator active" aria-label="Slide 1"></button>
+          <button class="slide-indicator"        aria-label="Slide 2"></button>
+          <button class="slide-indicator"        aria-label="Slide 3"></button>
+        </div>
+        <button class="slide-next" aria-label="Próximo slide">&#8594;</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <span class="hero-tag">Monitoramento Ambiental via Satélite</span>
+      <h1 class="hero-titulo">
+        A Terra fala.<br>
+        <span class="destaque-agua">O TerraShield</span><br>
+        <span class="destaque-brasa">escuta.</span>
+      </h1>
+      <p class="hero-sub">
+        Dados reais de satélites NASA e INPE, processados em tempo real
+        para alertar sobre queimadas, enchentes e deslizamentos.
+      </p>
+      <div class="hero-btns">
+        <a href="#problema" class="btn-primario">Conheça o problema</a>
+        <a href="#aplicacao" class="btn-secundario">Como funciona</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num brasa">27M ha</span>
+          <span class="stat-label">queimados por ano</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num agua">4 bilhões</span>
+          <span class="stat-label">pessoas em risco</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num terra">&lt; 1s</span>
+          <span class="stat-label">tempo de alerta</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 1 — PROBLEMA -->
+  <section id="problema">
+    <div class="container">
+      <div class="secao-layout">
+        <div class="secao-texto">
+          <span class="secao-label">01 — Problema</span>
+          <h2 class="secao-titulo">O Brasil perde bilhões<br>com desastres previsíveis.</h2>
+          <div class="divisor"></div>
+          <p>
+            Satélites já monitoram queimadas, enchentes e deslizamentos
+            em tempo real. O problema é que os dados não chegam
+            a quem precisa agir.
+          </p>
+        </div>
+        <div class="problema-cards">
+          <div class="problema-card queimada">
+            <p class="card-titulo">Queimadas</p>
+            <p class="card-desc">27 milhões de hectares destruídos por ano no Brasil.</p>
+          </div>
+          <div class="problema-card enchente">
+            <p class="card-titulo">Enchentes</p>
+            <p class="card-desc">Principal causa de mortes por desastre natural no país.</p>
+          </div>
+          <div class="problema-card deslizamento">
+            <p class="card-titulo">Deslizamentos</p>
+            <p class="card-desc">Devastam cidades inteiras na Serra e no litoral.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2 — TECNOLOGIA -->
+  <section id="tecnologia">
+    <div class="container">
+      <span class="secao-label">02 — Tecnologia</span>
+      <h2 class="secao-titulo">Stack técnico do sistema.</h2>
+      <div class="divisor"></div>
+      <p>Fontes abertas, processamento local e hardware embarcado integrados.</p>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <p class="tech-nome">NASA FIRMS</p>
+          <p class="tech-desc">Focos de queimadas em CSV — tempo real, gratuito, sem login.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-nome">INPE BDQueimadas</p>
+          <p class="tech-desc">Dados de incêndios do Brasil com foco por bioma e estado.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-nome">OpenWeather API</p>
+          <p class="tech-desc">Chuva acumulada e risco de enchente por coordenada geográfica.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-nome">Copernicus / ESA</p>
+          <p class="tech-desc">Imagens SAR e índice de vegetação NDVI via satélite europeu.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-nome">Python 3</p>
+          <p class="tech-desc">Núcleo do sistema — processamento de dados e cálculo de risco.</p>
+        </div>
+        <div class="tech-card">
+          <p class="tech-nome">Arduino / Wokwi</p>
+          <p class="tech-desc">Edge computing — alertas físicos com LEDs, buzzer e LCD.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3 — OBJETIVOS -->
+  <section id="objetivos">
+    <div class="container">
+      <span class="secao-label">03 — Objetivos</span>
+      <h2 class="secao-titulo">O que o TerraShield<br>faz por você.</h2>
+      <div class="divisor"></div>
+      <ul class="objetivos-lista">
+        <li class="objetivo-item">
+          <span class="objetivo-num">01</span>
+          <div class="objetivo-texto">
+            <p class="objetivo-titulo">Rastrear desastres em tempo real</p>
+            <p class="objetivo-sub">APIs satelitais consultadas e atualizadas continuamente.</p>
+          </div>
+          <span class="objetivo-check" aria-hidden="true">✓</span>
+        </li>
+        <li class="objetivo-item">
+          <span class="objetivo-num">02</span>
+          <div class="objetivo-texto">
+            <p class="objetivo-titulo">Calcular nível de risco</p>
+            <p class="objetivo-sub">Modelo matemático com dados históricos e em tempo real.</p>
+          </div>
+          <span class="objetivo-check" aria-hidden="true">✓</span>
+        </li>
+        <li class="objetivo-item">
+          <span class="objetivo-num">03</span>
+          <div class="objetivo-texto">
+            <p class="objetivo-titulo">Emitir alertas físicos</p>
+            <p class="objetivo-sub">Arduino aciona LEDs, buzzer e LCD com o nível de perigo.</p>
+          </div>
+          <span class="objetivo-check" aria-hidden="true">✓</span>
+        </li>
+        <li class="objetivo-item">
+          <span class="objetivo-num">04</span>
+          <div class="objetivo-texto">
+            <p class="objetivo-titulo">Gerar relatórios de áreas críticas</p>
+            <p class="objetivo-sub">Exporta dados para tomada de decisão por autoridades.</p>
+          </div>
+          <span class="objetivo-check" aria-hidden="true">✓</span>
+        </li>
+        <li class="objetivo-item">
+          <span class="objetivo-num">05</span>
+          <div class="objetivo-texto">
+            <p class="objetivo-titulo">Preservar vidas e biomas</p>
+            <p class="objetivo-sub">Alerta antecipado reduz impacto em pessoas e ecossistemas.</p>
+          </div>
+          <span class="objetivo-check" aria-hidden="true">✓</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4 — PÚBLICO-ALVO -->
+  <section id="publico">
+    <div class="container">
+      <span class="secao-label">04 — Público-alvo</span>
+      <h2 class="secao-titulo">Quem usa<br>o TerraShield.</h2>
+      <div class="divisor"></div>
+      <p>Qualquer agente que depende de informação ambiental rápida e confiável.</p>
+      <div class="publico-grid">
+        <div class="publico-card">
+          <div class="publico-icone" aria-hidden="true">DC</div>
+          <p class="publico-nome">Defesa Civil</p>
+          <p class="publico-desc">Ativa evacuações antes que o nível de risco seja crítico.</p>
+        </div>
+        <div class="publico-card">
+          <div class="publico-icone" aria-hidden="true">AG</div>
+          <p class="publico-nome">Agricultores</p>
+          <p class="publico-desc">Protege safras de queimadas e enchentes nas proximidades.</p>
+        </div>
+        <div class="publico-card">
+          <div class="publico-icone" aria-hidden="true">PQ</div>
+          <p class="publico-nome">Pesquisadores</p>
+          <p class="publico-desc">Monitora biomas e identifica padrões sazonais de risco.</p>
+        </div>
+        <div class="publico-card">
+          <div class="publico-icone" aria-hidden="true">PF</div>
+          <p class="publico-nome">Prefeituras</p>
+          <p class="publico-desc">Toma decisões de emergência com dados precisos e atuais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5 — BENEFÍCIOS -->
+  <section id="beneficios">
+    <div class="container">
+      <span class="secao-label">05 — Benefícios</span>
+      <h2 class="secao-titulo">Impacto real<br>no mundo real.</h2>
+      <div class="divisor"></div>
+      <div class="beneficios-layout">
+        <div class="beneficios-lista">
+          <div class="beneficio-item">
+            <div class="beneficio-barra brasa"></div>
+            <div>
+              <p class="beneficio-titulo">Salva vidas</p>
+              <p class="beneficio-desc">Alertas antecipados permitem evacuação segura antes do desastre.</p>
+            </div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-barra agua"></div>
+            <div>
+              <p class="beneficio-titulo">Dados gratuitos</p>
+              <p class="beneficio-desc">APIs abertas da NASA e INPE — zero custo para comunidades.</p>
+            </div>
+          </div>
+          <div class="beneficio-item">
+            <div class="beneficio-barra terra"></div>
+            <div>
+              <p class="beneficio-titulo">Preserva biomas</p>
+              <p class="beneficio-desc">Monitoramento contínuo da Amazônia e Cerrado em tempo real.</p>
+            </div>
+          </div>
+        </div>
+        <div class="metricas">
+          <div class="metrica-card">
+            <p class="metrica-num">27M ha</p>
+            <p class="metrica-label">área queimada por ano</p>
+          </div>
+          <div class="metrica-card">
+            <p class="metrica-num">&lt; 1s</p>
+            <p class="metrica-label">tempo de geração do alerta</p>
+          </div>
+          <div class="metrica-card">
+            <p class="metrica-num">3 tipos</p>
+            <p class="metrica-label">de desastres monitorados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 6 — APLICAÇÃO -->
+  <section id="aplicacao">
+    <div class="container">
+      <span class="secao-label">06 — Aplicação no dia a dia</span>
+      <h2 class="secao-titulo">Do satélite ao alerta<br>em 5 passos.</h2>
+      <div class="divisor"></div>
+      <p>Um operador usa o TerraShield de forma simples e direta.</p>
+      <div class="steps">
+        <div class="step">
+          <p class="step-num">01</p>
+          <p class="step-titulo">Consulta</p>
+          <p class="step-desc">APIs satelitais buscam dados atualizados automaticamente.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">02</p>
+          <p class="step-titulo">Filtro</p>
+          <p class="step-desc">Usuário escolhe região e tipo de desastre a monitorar.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">03</p>
+          <p class="step-titulo">Cálculo</p>
+          <p class="step-desc">Python aplica o modelo matemático e classifica o risco.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">04</p>
+          <p class="step-titulo">Alerta</p>
+          <p class="step-desc">Arduino aciona LED vermelho, buzzer e exibe no LCD.</p>
+        </div>
+        <div class="step">
+          <p class="step-num">05</p>
+          <p class="step-titulo">Relatório</p>
+          <p class="step-desc">Sistema gera relatório com áreas críticas e recomendações.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz">
+    <div class="container">
+      <span class="secao-label">Quiz — TerraShield</span>
+      <h2 class="secao-titulo">Teste seus conhecimentos.</h2>
+      <div class="divisor"></div>
+      <p>10 perguntas sobre monitoramento ambiental e o projeto TerraShield.</p>
+      <div class="quiz-box">
+        <div id="quiz-conteudo">
+          <p id="quiz-progresso" class="quiz-progresso">Pergunta 1 de 10</p>
+          <p id="quiz-pergunta"  class="quiz-pergunta"></p>
+          <div id="quiz-opcoes"  class="quiz-opcoes"></div>
+          <p id="quiz-feedback"  class="quiz-feedback"></p>
+          <button id="quiz-proximo">Próxima pergunta →</button>
+        </div>
+        <div id="quiz-resultado">
+          <p class="resultado-titulo">Quiz concluído!</p>
+          <p id="quiz-pontuacao"></p>
+          <button id="quiz-reiniciar">Tentar novamente</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO -->
+  <section id="contato">
+    <div class="container">
+      <span class="secao-label">Contato</span>
+      <h2 class="secao-titulo">Fale com a gente.</h2>
+      <div class="divisor"></div>
+      <p>Tem interesse no TerraShield? Entre em contato com nossa equipe.</p>
+      <form id="contato-form" class="form-grid" novalidate>
+        <div class="form-grupo">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" />
+          <span class="form-erro" id="erro-nome"></span>
+        </div>
+        <div class="form-grupo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="seu@email.com" />
+          <span class="form-erro" id="erro-email"></span>
+        </div>
+        <div class="form-grupo">
+          <label for="tipo">Você é</label>
+          <select id="tipo" name="tipo">
+            <option value="">Selecione seu perfil</option>
+            <option value="defesa-civil">Defesa Civil</option>
+            <option value="agricultor">Agricultor</option>
+            <option value="pesquisador">Pesquisador</option>
+            <option value="prefeitura">Prefeitura</option>
+            <option value="outro">Outro</option>
+          </select>
+          <span class="form-erro" id="erro-tipo"></span>
+        </div>
+        <div class="form-grupo full">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+          <span class="form-erro" id="erro-mensagem"></span>
+        </div>
+        <div class="form-grupo full">
+          <button type="submit" class="btn-primario">Enviar mensagem</button>
+          <p id="form-mensagem" class="form-msg"></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-logo">TerraShield</p>
+      <p class="footer-ods">ODS 13 · ODS 11 · ODS 2</p>
+      <div class="footer-equipe">
+        <strong>Grupo — Eng. de Software · FIAP · GS 2026</strong><br>
+        Enzo · RM568894 &nbsp;|&nbsp;
+        Leonardo · RM570991 &nbsp;|&nbsp;
+        Heitor · RM569762 &nbsp;|&nbsp;
+        Vitor · RM572192 &nbsp;|&nbsp;
+        Paulo · RM569992
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
