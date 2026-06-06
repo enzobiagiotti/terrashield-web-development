@@ -1177,3 +1177,60 @@ footer {
   .form-grupo        { flex: 1 1 100%; }
   .temas-btns        { gap: 0.5rem; }
 }
+
+/* Esconde a div de resultados por padrão */
+#quiz-resultado {
+    display: none;
+}
+
+/* Estilização real dos botões de alternativas */
+.quiz-opcao-btn {
+    display: block;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo sutil semi-transparente para o tema escuro */
+    color: #f5f5f5;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 14px 20px;
+    margin-bottom: 12px;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Efeito ao passar o mouse antes de responder */
+.quiz-opcao-btn:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+
+/* Estilo do botão Próxima Pergunta */
+#quiz-proximo {
+    background-color: #f5f5f5;
+    color: #1a2f24; /* Cor escura combinando com seu fundo */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+#quiz-proximo:hover {
+    background-color: #e0e0e0;
+}
+
+/* CORES DE FEEDBACK DO JS */
+.quiz-opcoes button.correta {
+    background-color: #2ecc71 !important; /* Verde */
+    color: white !important;
+    border-color: #27ae60 !important;
+}
+
+.quiz-opcoes button.errada {
+    background-color: #e74c3c !important; /* Vermelho */
+    color: white !important;
+    border-color: #c0392b !important;
+}
