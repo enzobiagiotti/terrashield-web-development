@@ -1,3 +1,206 @@
+// ── TERRASHIELD — Web Development JavaScript ────────────────────────────
+// Enzo Biagiotti · RM568894 — Slideshow, Troca de Tema, Formulário
+// Leonardo Novaes · RM570991 — Quiz
+
+// ════════════════════════════════════════════════
+// 1. SLIDESHOW
+// ════════════════════════════════════════════════
+const slides     = document.querySelectorAll('.slide');
+const btnPrev    = document.querySelector('.slide-prev');
+const btnNext    = document.querySelector('.slide-next');
+const indicators = document.querySelectorAll('.slide-indicator');
+let currentSlide = 0;
+let autoPlay;
+
+function goToSlide(index) {
+  slides[currentSlide].classList.remove('active');
+  indicators[currentSlide].classList.remove('active');
+  currentSlide = (index + slides.length) % slides.length;
+  slides[currentSlide].classList.add('active');
+  indicators[currentSlide].classList.add('active');
+}
+
+function nextSlide() { goToSlide(currentSlide + 1); }
+function prevSlide() { goToSlide(currentSlide - 1); }
+
+function startAutoPlay() {
+  autoPlay = setInterval(nextSlide, 4000);
+}
+
+function resetAutoPlay() {
+  clearInterval(autoPlay);
+  startAutoPlay();
+}
+
+if (slides.length > 0) {
+  btnNext.addEventListener('click', function () { nextSlide(); resetAutoPlay(); });
+  btnPrev.addEventListener('click', function () { prevSlide(); resetAutoPlay(); });
+  indicators.forEach(function (ind, i) {
+    ind.addEventListener('click', function () { goToSlide(i); resetAutoPlay(); });
+  });
+  startAutoPlay();
+}
+
+// ════════════════════════════════════════════════
+// 2. TROCA DE TEMA
+// ════════════════════════════════════════════════
+const temaButtons = document.querySelectorAll('.tema-btn');
+
+const temas = {
+  padrao: {
+    '--areia':        '#F5EFE6',
+    '--areia-escura': '#E8DDD0',
+    '--floresta':     '#2C3E30',
+    '--floresta-mid': '#3D5244',
+    '--musgo':        '#7A8C7E',
+    '--agua':         '#7AAFC4',
+    '--agua-clara':   '#B8D4E0',
+    '--brasa':        '#C7624A',
+    '--terra':        '#C8A882',
+    '--terra-escura': '#9A7B58',
+    '--branco':       '#FDFBF9',
+  },
+  noite: {
+    '--areia':        '#1A1F1B',
+    '--areia-escura': '#242C25',
+    '--floresta':     '#0D1410',
+    '--floresta-mid': '#1A2A1C',
+    '--musgo':        '#4A5C4D',
+    '--agua':         '#4A8FA8',
+    '--agua-clara':   '#2A5A6E',
+    '--brasa':        '#A04535',
+    '--terra':        '#8A6840',
+    '--terra-escura': '#6A5030',
+    '--branco':       '#D0CCC8',
+  },
+  alerta: {
+    '--areia':        '#FFF8F0',
+    '--areia-escura': '#FFE8CC',
+    '--floresta':     '#4A1A00',
+    '--floresta-mid': '#6A2A00',
+    '--musgo':        '#8A5A3A',
+    '--agua':         '#5A90A8',
+    '--agua-clara':   '#C8E0EA',
+    '--brasa':        '#E03010',
+    '--terra':        '#D4903A',
+    '--terra-escura': '#B07020',
+    '--branco':       '#FFFAF5',
+  }
+};
+
+function aplicarTema(nome) {
+  const tema = temas[nome];
+  const root = document.documentElement;
+  Object.keys(tema).forEach(function (prop) {
+    root.style.setProperty(prop, tema[prop]);
+  });
+  temaButtons.forEach(function (btn) {
+    btn.classList.remove('ativo');
+    if (btn.dataset.tema === nome) btn.classList.add('ativo');
+  });
+  localStorage.setItem('terrashield-tema', nome);
+}
+
+temaButtons.forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    aplicarTema(btn.dataset.tema);
+  });
+});
+
+const temaSalvo = localStorage.getItem('terrashield-tema');
+if (temaSalvo && temas[temaSalvo]) {
+  aplicarTema(temaSalvo);
+}
+
+// ════════════════════════════════════════════════
+// 3. FORMULÁRIO COM VALIDAÇÃO
+// ════════════════════════════════════════════════
+const form         = document.getElementById('contato-form');
+const formMensagem = document.getElementById('form-mensagem');
+
+function mostrarErro(campo, msg) {
+  const erro = document.getElementById('erro-' + campo);
+  if (erro) {
+    erro.textContent = msg;
+    erro.style.display = 'block';
+  }
+  const input = document.getElementById(campo);
+  if (input) input.classList.add('campo-erro');
+}
+
+function limparErro(campo) {
+  const erro = document.getElementById('erro-' + campo);
+  if (erro) {
+    erro.textContent = '';
+    erro.style.display = 'none';
+  }
+  const input = document.getElementById(campo);
+  if (input) input.classList.remove('campo-erro');
+}
+
+function validarEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+if (form) {
+  form.querySelectorAll('input, select, textarea').forEach(function (campo) {
+    campo.addEventListener('input', function () {
+      limparErro(campo.id);
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let valido = true;
+
+    const nome  = document.getElementById('nome');
+    const email = document.getElementById('email');
+    const tipo  = document.getElementById('tipo');
+    const msg   = document.getElementById('mensagem');
+
+    ['nome', 'email', 'tipo', 'mensagem'].forEach(limparErro);
+
+    if (!nome.value.trim()) {
+      mostrarErro('nome', 'Por favor, informe seu nome.');
+      valido = false;
+    }
+
+    if (!email.value.trim()) {
+      mostrarErro('email', 'Por favor, informe seu e-mail.');
+      valido = false;
+    } else if (!validarEmail(email.value.trim())) {
+      mostrarErro('email', 'E-mail inválido. Use o formato: nome@exemplo.com');
+      valido = false;
+    }
+
+    if (!tipo.value) {
+      mostrarErro('tipo', 'Selecione seu perfil.');
+      valido = false;
+    }
+
+    if (!msg.value.trim()) {
+      mostrarErro('mensagem', 'Por favor, escreva sua mensagem.');
+      valido = false;
+    } else if (msg.value.trim().length < 10) {
+      mostrarErro('mensagem', 'Mensagem muito curta. Escreva pelo menos 10 caracteres.');
+      valido = false;
+    }
+
+    if (valido) {
+      formMensagem.textContent = 'Mensagem enviada com sucesso! Entraremos em contato em breve.';
+      formMensagem.className = 'form-msg sucesso';
+      form.reset();
+      setTimeout(function () {
+        formMensagem.textContent = '';
+        formMensagem.className = 'form-msg';
+      }, 5000);
+    } else {
+      formMensagem.textContent = 'Por favor, corrija os campos destacados.';
+      formMensagem.className = 'form-msg erro';
+    }
+  });
+}
+
 // ==========================================
 // 1. BANCO DE DADOS (MODEL)
 // ==========================================
