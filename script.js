@@ -1,6 +1,6 @@
 // ── TERRASHIELD — Web Development JavaScript ────────────────────────────
 // Enzo Biagiotti · RM568894 — Slideshow, Troca de Tema, Formulário
-// Leonardo Novaes · RM570991 — Quiz
+// Vitor Assis · RM572192 — Quiz
 
 // ════════════════════════════════════════════════
 // 1. SLIDESHOW
